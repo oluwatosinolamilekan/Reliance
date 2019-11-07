@@ -10,8 +10,8 @@ class TrafficController
         $data = [];
         $data['users'] = [];
         // 65k rows
-        $allTptp = TariffProviderTariffMatch::all();
-        foreach ($allTptp->groupBy('user_id') as $each) {
+        $allTptp = TariffProviderTariffMatch::all(); // calling a method from TariffProviderTariffMatch
+        foreach ($allTptp->groupBy('user_id') as $each) { // groupBy method doesnt Exist
 
           $one = [];
           $one['name'] = $each[0]->user->first_name . " " . $each[0]->user->last_name;
