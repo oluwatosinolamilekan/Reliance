@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\TariffProviderTariffMatch;
-use App\Libraries\GlobalVariable;
+use App\Libraries\{GlobalVariable,ActiveStatus};
 
 class TrafficController
 {
@@ -22,14 +22,14 @@ class TrafficController
           $one['cash'] = 0;
           foreach ($each as $single) {
             switch ($single->active_status) {
-              case ActiveStatus::ACTIVE: // 1
+              case ActiveStatus::active: // 1
                 $one['valid']++;
                 $one['cash'] += floatval(GlobalVariable::getById(GlobalVariable::STANDARDIZATION_UNIT_PRICE)->value);
                 break;
-              case ActiveStatus::PENDING: // 2
+              case ActiveStatus::pending: // 2
                 $one['pending']++;
                 break;
-              case ActiveStatus::DELETED: // 3
+              case ActiveStatus::deleted: // 3
                 $one['invalid']++;
                 break;
             }
