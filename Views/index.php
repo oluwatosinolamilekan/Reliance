@@ -26,6 +26,12 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="" value="" required>
            
           </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="Password">Remember me (for 90 days)</label>
+            <input type="checkbox" class="form-control">
+           
+          </div>
         </div>
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
