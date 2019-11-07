@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\TariffProviderTariffMatch;
+use App\Libraries\GlobalVariable;
+
 class TrafficController
 {
     function getStatistics() {
@@ -10,6 +12,7 @@ class TrafficController
         // 65k rows
         $allTptp = TariffProviderTariffMatch::all();
         foreach ($allTptp->groupBy('user_id') as $each) {
+
           $one = [];
           $one['name'] = $each[0]->user->first_name . " " . $each[0]->user->last_name;
           $one['valid'] = 0;
