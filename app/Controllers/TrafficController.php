@@ -1,9 +1,8 @@
 <?php
 
+namespace App\Controllers;
 use App\Models\TariffProviderTariffMatch;
-namespace App\Index;
-
-class Login
+class TrafficController
 {
     function getStatistics() {
         $data = [];
@@ -39,3 +38,4 @@ class Login
         return $data;
       }
 }
+
